@@ -1,0 +1,86 @@
+body{
+    background: url(./f332c4b2.png);
+    /* SETTINGS */
+    --size: 40vh;
+}
+
+.movies{
+    width: var(--size);
+    height: var(--size);
+        background-color: rgb(15, 15, 15);
+    margin-top: 
+        calc( (100vh - var(--size)) / 2);
+    margin-left: 
+        calc(100vw / 3 - var(--size) / 2);
+    border-radius: 100%;
+}
+
+.movies .film{
+    background-color: #333;
+    height: calc( var(--size) * 0.75);
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    overflow: hidden;
+
+}
+
+.movies img{
+    /* display: none; */
+    height: calc( var(--size) * 0.92 * 0.75);
+    margin-right: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
+    margin-top: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
+    margin-bottom: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
+    float: left;
+}
+
+.movies .controls{
+    background-color: #777;
+    position: absolute;
+    height: calc( var(--size) * 0.8);
+    width: calc( var(--size) * 0.8);
+    /* HW 3 */
+    top: calc( (100vh - (var(--size)*0.8)) / 2);
+    left: calc(100vw / 3 - (var(--size)*0.8) / 2);
+    border-radius: 100%;
+    background-color: rgba(54, 54, 54, 0.7);
+    /* background-color: transparent; */
+
+}
+.movies .controls::before{
+    content: "";
+    height: inherit;
+    width: inherit;
+    background-color: rgba(54, 54, 54);
+    position:absolute;
+    opacity: 0.7;
+    border-radius: 100%;
+}
+
+.controls button{
+    position: absolute;
+    background: none;
+    height: calc( var(--size) * 0.2);
+    width: calc( var(--size) * 0.25);
+	color: inherit;
+	border: none;
+    padding: 0;
+    border-radius: 100%;
+	font: inherit;
+	cursor: pointer;
+    outline: inherit;
+
+    top: calc( (100vh - (var(--size)*1.9)) / 2);
+    left: calc(100vh / 3 - (var(--size)*1.1) / 2);
+}
+.controls .fab{
+    font-size: calc( var(--size) * 0.2);
+    color: rgb(255, 255, 255);
+
+}
+
