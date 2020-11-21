@@ -1,5 +1,6 @@
 body{
-    background: url(./f332c4b2.png);
+    background: url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-size: cover;
     /* SETTINGS */
     --size: 40vh;
 }
@@ -31,7 +32,7 @@ body{
 }
 
 .movies img{
-    /* display: none; */
+    display: none;
     height: calc( var(--size) * 0.92 * 0.75);
     margin-right: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
     margin-top: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
