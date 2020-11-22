@@ -1,8 +1,16 @@
 body{
-    background: url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background: 
+        radial-gradient(circle,transparent 60%,rgb(0, 0, 0) 100%),
+        url(https://images.unsplash.com/photo-1514306191717-452ec28c7814?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
     background-size: cover;
+    background-position: cover;
     /* SETTINGS */
     --size: 40vh;
+    --count: 7;
+    --top-marker: calc(var(--size) * 0.04 * 0.75);
+    --bottom-marker: calc(var(--size) * 0.96 * 0.75);
+    overflow: hidden;
+    user-select: none;
 }
 
 .movies{
@@ -14,10 +22,12 @@ body{
     margin-left: 
         calc(100vw / 3 - var(--size) / 2);
     border-radius: 100%;
+        box-shadow: 0px 0px 20px 5px rgb(255, 95, 95);
+
 }
 
 .movies .film{
-    background-color: #333;
+    /* background-color: #333; */
     height: calc( var(--size) * 0.75);
     position: absolute;
     left: 0;
@@ -28,20 +38,42 @@ body{
     margin: auto;
 
     overflow: hidden;
+    width: calc(var(--count) * ( var(--size) * 0.92 * 0.75 * 4 / 3 + 1vh));
+    background-image: 
+        linear-gradient(transparent ,transparent var(--top-marker), black var(--top-marker), black var(--bottom-marker), transparent var(--bottom-marker)),
+        radial-gradient(transparent 50%, black 50%),
+        radial-gradient(transparent 50%, black 50%);
 
-}
+    background-size: 
+        cover, 
+        var(--top-marker) var(--top-marker),
+        var(--top-marker) var(--top-marker);
+    background-repeat: 
+        repeat,
+        repeat-x,
+        repeat-x;
+    background-position: 
+    top left,
+    top left,
+    bottom left;
+
+    filter: drop-shadow(2px 2px 6px #333);
+}   
 
 .movies img{
-    display: none;
+    /* display: none; */
     height: calc( var(--size) * 0.92 * 0.75);
-    margin-right: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
+    position: relative;
+    top: calc(var(--size) * 0.04 * 0.75);
+    margin: 0 0.5vh;
+    cursor: pointer;
+    /* margin-right: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
     margin-top: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
     margin-bottom: calc( (100vh /3 - var(--size) * 0.75) / 2.95);
-    float: left;
+    float: left; */
 }
 
 .movies .controls{
-    background-color: #777;
     position: absolute;
     height: calc( var(--size) * 0.8);
     width: calc( var(--size) * 0.8);
@@ -50,8 +82,7 @@ body{
     left: calc(100vw / 3 - (var(--size)*0.8) / 2);
     border-radius: 100%;
     background-color: rgba(54, 54, 54, 0.7);
-    /* background-color: transparent; */
-
+    
 }
 .movies .controls::before{
     content: "";
@@ -61,6 +92,7 @@ body{
     position:absolute;
     opacity: 0.7;
     border-radius: 100%;
+    box-shadow: 0px 0px 2px 2px red;
 }
 
 .controls button{
@@ -75,13 +107,14 @@ body{
 	font: inherit;
 	cursor: pointer;
     outline: inherit;
-
+    
     top: calc( (100vh - (var(--size)*1.9)) / 2);
     left: calc(100vh / 3 - (var(--size)*1.1) / 2);
 }
 .controls .fab{
     font-size: calc( var(--size) * 0.2);
     color: rgb(255, 255, 255);
+    background: radial-gradient(red 50%, transparent 5%);
 
 }
 
